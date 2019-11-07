@@ -13,7 +13,7 @@ describe('hero search box', () => {
   });
 
   it(`navigates to the hero's URL when search result is clicked`, () => {
-    cy.get('#search-box').type('{backspace}{backspace}mr');
+    cy.get('#search-box').clear().type('mr');
     cy.get('.search-result li').should('contain', 'Mr. Nice').click();
     cy.url().should('contain', '/detail/11');
   });
