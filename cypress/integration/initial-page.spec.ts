@@ -1,11 +1,13 @@
 describe('dashboard', () => {
+  before(() => {
+    cy.visit('/dashboard');
+  });
+
   it(`has h1 'Tour of Heroes'`, () => {
-    cy.visit("/dashboard");
     cy.get('h1').should('contain', 'Tour of Heroes');
   });
 
   it(`has title 'Tour of Heroes'`, () => {
-    cy.visit("/dashboard");
     cy.title().should('eq', 'Tour of Heroes');
   });
 
