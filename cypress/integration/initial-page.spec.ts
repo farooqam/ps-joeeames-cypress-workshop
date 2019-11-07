@@ -13,7 +13,7 @@ describe('dashboard', () => {
 
   it(`has the 'Hero search' box`, () => {
     cy.get('app-hero-search').within(() => {
-      cy.get('h4').contains('Hero Search');
+      cy.get('h4').should('contain', 'Hero Search');
       cy.get('input').should('exist');
     });
   });
